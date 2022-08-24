@@ -43,10 +43,39 @@ tsc --watch // transpile on change in current directory (watch changes)
 - tsconfig.json
 
 ```json
- "target": "es2016",    // Set the JavaScript language version for emitted JavaScript and include compatible library declarations.
- "module": "commonjs",  // Specify what module code is generated.
-  "rootDir": "./src",   // Specify the root folder within your source files.
-    "outDir": "./dist", // Specify an output folder for all emitted files.
-    "removeComments": true, // Disable emitting comments.
-     "noEmitOnError": true, // Disable emitting files if any type checking errors are reported.
+"target": "es2016",    // Set the JavaScript language version for emitted JavaScript and include compatible library declarations.
+"module": "commonjs",  // Specify what module code is generated.
+"rootDir": "./src",   // Specify the root folder within your source files.
+"outDir": "./dist", // Specify an output folder for all emitted files.
+"removeComments": true, // Disable emitting comments.
+"noEmitOnError": true, // Disable emitting files if any type checking errors are reported.
+"sourceMap": true, // Create source map files for emitted JavaScript files. A source map file maps from the transpiled JavaScript file to the original TypeScript file. This allows the original TypeScript code to be reconstructed while debugging.
+```
+
+## Debug
+
+> Before debug we can create or edit launch.json file
+
+launch.json <br>
+<img src="./image/2.png">
+<br>
+
+```json
+"configurations": [
+
+        {
+            "type": "pwa-node",
+            "request": "launch",
+            "name": "Launch Program",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}\\src\\index.ts",
+            // preLaunchTask - to launch a task before the start of a debug session, set this attribute to the label of a task specified in tasks.
+           "preLaunchTask": "tsc: build - tsconfig.json",
+            "outFiles": [
+                "${workspaceFolder}/**/*.js"
+            ]
+        }
+    ]
 ```
