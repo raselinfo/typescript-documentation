@@ -1,7 +1,11 @@
-function calculateTax(age: number, tax: number=80) {
-  if (tax) return tax;
-  if (age < 50) return "string";
+type Employee = {
+  readonly id: number;
+  name: string;
+  retire: (date: Date) => void;
+};
 
-  return "string";
-}
-calculateTax(5)
+const newEmployee: Employee = {
+  id: 50,
+  name: "Rasel",
+  retire: (date: Date = new Date()) => date,
+};

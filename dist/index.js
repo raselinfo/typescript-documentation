@@ -1,10 +1,7 @@
 "use strict";
-function calculateTax(age, tax = 80) {
-    if (tax)
-        return tax;
-    if (age < 50)
-        return "string";
-    return "string";
-}
-calculateTax(5);
+const newEmployee = {
+    id: 50,
+    name: "Rasel",
+    retire: (date = new Date()) => date,
+};
 //# sourceMappingURL=index.js.map
