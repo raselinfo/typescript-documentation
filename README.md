@@ -50,6 +50,9 @@ tsc --watch // transpile on change in current directory (watch changes)
 "removeComments": true, // Disable emitting comments.
 "noEmitOnError": true, // Disable emitting files if any type checking errors are reported.
 "sourceMap": true, // Create source map files for emitted JavaScript files. A source map file maps from the transpiled JavaScript file to the original TypeScript file. This allows the original TypeScript code to be reconstructed while debugging.
+"noUnusedParameters": true, // Raise an error when a function parameter isn't read.
+"noUnusedLocals": true, // Enable error reporting when local variables aren't read.
+"noImplicitReturns": true, // Enable error reporting for codepaths that do not explicitly return in a function.
 ```
 
 ## Debug
@@ -81,7 +84,9 @@ launch.json
 ```
 
 ## Data Type
+
 #### Javascript
+
 - number
 - string
 - boolean
@@ -90,10 +95,9 @@ launch.json
 - object
 
 #### TypeScript
+
 - any
 - unknown
 - never
 - enum
 - tuple
-
-
