@@ -2,6 +2,6 @@
 const newEmployee = {
     id: 50,
     name: "Rasel",
-    retire: (date = new Date()) => date,
+    retire: (date) => date,
 };
 //# sourceMappingURL=index.js.map

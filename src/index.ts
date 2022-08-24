@@ -7,5 +7,5 @@ type Employee = {
 const newEmployee: Employee = {
   id: 50,
   name: "Rasel",
-  retire: (date: Date = new Date()) => date,
+  retire: (date) => date,
 };
