@@ -56,9 +56,9 @@ tsc --watch // transpile on change in current directory (watch changes)
 
 > Before debug we can create or edit launch.json file
 
-launch.json <br>
 <img src="./image/2.png">
 <br>
+launch.json
 
 ```json
 "configurations": [
@@ -79,3 +79,21 @@ launch.json <br>
         }
     ]
 ```
+
+## Data Type
+#### Javascript
+- number
+- string
+- boolean
+- null
+- undefined
+- object
+
+#### TypeScript
+- any
+- unknown
+- never
+- enum
+- tuple
+
+
