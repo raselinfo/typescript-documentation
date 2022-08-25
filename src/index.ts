@@ -1,11 +1,7 @@
-type Employee = {
-  readonly id: number;
-  name: string;
-  retire: (date: Date) => void;
-};
+enum Size {
+  Small="Small",
+  Medium="Medium",
+  Large="Large"
+}
 
-const newEmployee: Employee = {
-  id: 50,
-  name: "Rasel",
-  retire: (date) => date,
-};
+console.log(Size)

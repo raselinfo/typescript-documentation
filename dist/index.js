@@ -1,7 +1,9 @@
 "use strict";
-const newEmployee = {
-    id: 50,
-    name: "Rasel",
-    retire: (date) => date,
+const test = (name) => {
+    if (name)
+        console.log(name);
+    else
+        console.log(name);
 };
+test(null);
 //# sourceMappingURL=index.js.map

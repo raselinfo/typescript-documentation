@@ -52,7 +52,7 @@ tsc --watch // transpile on change in current directory (watch changes)
 "sourceMap": true, // Create source map files for emitted JavaScript files. A source map file maps from the transpiled JavaScript file to the original TypeScript file. This allows the original TypeScript code to be reconstructed while debugging.
 
 "noUnusedParameters": true, // Raise an error when a function parameter isn't read.
-"noUnusedLocals": true, // Enable error reporting when local variables aren't read. 
+"noUnusedLocals": true, // Enable error reporting when local variables aren't read.
 "noImplicitReturns": true, // Enable error reporting for codepaths that do not explicitly return in a function.
 
 ```
@@ -100,6 +100,28 @@ launch.json
 
 - any
 - unknown
+- array
+- tuples
 - never
 - enum
 - tuple
+
+##### Tuples
+
+The number of elements of the array is fixed. The type of the elements is known. The type of the elements of the array need not be the same
+
+```ts
+let user: [number, string] = [1, "rasel"];
+```
+
+##### Enum
+
+Each of these constant values is known as a member of the enum. Enums are useful when setting properties or values that can only be a certain number of possible values.
+
+```ts
+enum Size {
+  Small = "Small",
+  Medium = "Medium",
+  Large = "Large",
+}
+```
