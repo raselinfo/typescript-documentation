@@ -1,7 +1,3 @@
-enum Size {
-  Small="Small",
-  Medium="Medium",
-  Large="Large"
-}
+import * as _ from "lodash"
 
-console.log(Size)
+_.clone([1,2,3])
