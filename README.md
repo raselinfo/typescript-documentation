@@ -226,3 +226,6 @@ export function calculateTax(income) {
 tax.d.ts;
 export declare function calculateTax(income: number): number;
 ```
+
+## Rect Typescript
+<a hrf="https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/function_components"><b>React Typescript Cheat sheet 😎</b></a>
