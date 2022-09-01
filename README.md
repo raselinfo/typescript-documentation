@@ -227,5 +227,39 @@ tax.d.ts;
 export declare function calculateTax(income: number): number;
 ```
 
+## Generic
+What are Generics?
+
+Generics have been a major feature of strongly typed languages 
+like Java and C#. In TypeScript, they allow the types of components 
+and functions to be "SPECIFIED LATER" which allows them to be used 
+in creating reusable components that can apply to different use cases, 
+
+TypeScript Generics is a tool which provides a way to create reusable components. It creates a component that can work with a variety of data types rather than a single data type. It allows users to consume these components and use their own types.
+
+Generics allow creating 'type variables' which can be used to create classes, functions & type aliases that don't need to explicitly define the types that they use. Generics makes it easier to write reusable code.
+
+- Generic Classes
+- Generic Functions
+- Generic Interfaces
+- Generic Constraints
+- Type Mapping
+
+### Generic Classes
+
+```ts
+class KeyValuePair<Tkey, TValue> {
+  constructor(public key: Tkey, public value: TValue) {}
+}
+
+const pair1 = new KeyValuePair<number, string>(1, "Rasel");
+const pair2 = new KeyValuePair<string, string>("1", "Rasel");
+// it's automatic infer
+const pair3 = new KeyValuePair(5, "hossain");
+
+console.log(pair1, pair2, pair3);
+```
+
 ## Rect Typescript
+
 <a hrf="https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/function_components"><b>React Typescript Cheat sheet 😎</b></a>
