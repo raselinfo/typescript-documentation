@@ -1,16 +1,18 @@
-const testFunc = <TValue>(value: TValue) => {
-    return value
-}
-testFunc<number>(5)
-testFunc("Rasel") // it's automatic infer
+class Account {
+    id: number;
+    owner: string;
+    balance: number
 
-
-// In class
-class Utils {
-    static createArray<TValue>(value: TValue) {
-        return [value]
+    constructor(id: number, owner: string, balance: number) {
+        this.id = id;
+        this.owner = owner;
+        this.balance = balance
+    }
+    deposit(amount: number) {
+        if (amount <= 0)
+            throw new Error("Invalid amount")
+        this.balance += amount
     }
 }
 
-Utils.createArray<number>(5)
-Utils.createArray("Rasel")
+const account = new Account(1, "Rasel", 500)
