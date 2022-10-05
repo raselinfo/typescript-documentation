@@ -186,72 +186,54 @@ let phone2 = <HTMLInputElement>document.getElementById("emailInput");
 console.log(phone.value);
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## OOP IN Typescript
 
 ### Creating a Class
 
 ```ts
 class Account {
-    id: number;
+  id: number;
+  owner: string;
+  balance: number;
+
+  constructor(id: number, owner: string, balance: number) {
+    this.id = id;
+    this.owner = owner;
+    this.balance = balance;
+  }
+  deposit(amount: number) {
+    if (amount <= 0) throw new Error("Invalid amount");
+    this.balance += amount;
+  }
+}
+
+const account = new Account(1, "Rasel", 500);
+console.log(account instanceof Account);
+```
+
+### Access modifier (public, private, protected)
+
+All of the property **public** by default
+
+```ts
+class Account {
+    readonly id: number;
     owner: string;
-    balance: number
+    private _balance: number
 
     constructor(id: number, owner: string, balance: number) {
         this.id = id;
         this.owner = owner;
-        this.balance = balance
+        this._balance = balance
     }
-    deposit(amount: number) {
-        if (amount <= 0)
-            throw new Error("Invalid amount")
-        this.balance += amount
+    // Getter Setter ✅
+    get balance(): number {
+        return this._balance
     }
-}
-
-const account = new Account(1, "Rasel", 500)
-console.log(account instanceof Account)
+    set balance(value: number) {
+        this._balance = value
+    }
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 #### Index Signature Property
 
