@@ -235,6 +235,30 @@ class Account {
     }
 ```
 
+### Parameters Properties
+
+Parameter properties are declared by prefixing a constructor parameter with an accessibility modifier or readonly , or both. Using private for a parameter property declares and initializes a private member; likewise, the same is done for public , protected , and readonly.
+It is a shorthand for creating member variables
+
+```ts
+class Account {
+  constructor(
+    public readonly id: number,
+    public readonly owner: string,
+    private _balance: number
+  ) {
+    // Not need to assign variable like "this.id=id"
+  }
+  // Getter Setter ✅
+  get balance(): number {
+    return this._balance;
+  }
+  set balance(value: number) {
+    this._balance = value;
+  }
+}
+```
+
 #### Index Signature Property
 
 ```ts

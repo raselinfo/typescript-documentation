@@ -1,12 +1,10 @@
 class Account {
-    readonly id: number;
-    owner: string;
-    private _balance: number
 
-    constructor(id: number, owner: string, balance: number) {
-        this.id = id;
-        this.owner = owner;
-        this._balance = balance
+    constructor(
+        public readonly id: number,
+        public readonly owner: string,
+        private _balance: number) {
+        // Not need to assign variable like "this.id=id"
     }
     // Getter Setter ✅
     get balance(): number {
@@ -16,7 +14,7 @@ class Account {
         this._balance = value
     }
 
-    deposit(amount: number) {
+    public deposit(amount: number) {
         // this.id=50 is is readonly
         if (amount <= 0)
             throw new Error("Invalid amount")
@@ -25,4 +23,5 @@ class Account {
 }
 
 const account = new Account(1, "Rasel", 500)
-console.log(account instanceof Account)
+account.balance = 600
+console.log(account.balance)
