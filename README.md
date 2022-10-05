@@ -247,9 +247,9 @@ class Account {
     public readonly owner: string,
     private _balance: number
   ) {
-    // Not need to assign variable like "this.id=id"
+    // Not need to assign variable like "this.id=id" ✅
   }
-  // Getter Setter ✅
+  // Getter Setter 
   get balance(): number {
     return this._balance;
   }
