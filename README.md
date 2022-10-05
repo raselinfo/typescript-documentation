@@ -59,6 +59,9 @@ tsc --watch // transpile on change in current directory (watch changes)
  /* JavaScript Support */
 "allowJs": true, // Allow JavaScript files to be a part of your program. Use the 'checkJS' option to get errors from these files.
 "checkJs": true, // Enable error reporting in type-checked JavaScript files.
+
+/*OOP*/
+ "noImplicitOverride": true,                       /* Ensure overriding members in derived classes are marked with an override modifier. */
 ```
 
 ## Debug
@@ -310,7 +313,9 @@ class Ride {
 console.log(Ride.activeRide)
 
 ```
+
 ### Inheritance
+
 ```js
 class Person {
     constructor(public firstName: string, public lastName: string) {
@@ -323,7 +328,7 @@ class Person {
         console.log(this.fullName, "is walking.....")
     }
 }
-// Person is inherited by Student Class ✅	
+// Person is inherited by Student Class ✅
 class Student extends Person {
     constructor(public studentId: number, firstName: string, lastName: string) {
         super(firstName, lastName)
@@ -337,6 +342,31 @@ class Student extends Person {
 const student1 = new Student(1, "Rasel", "Hossain")
 student1.talking()
 ```
+
+### Method override
+
+```ts
+class Person {
+    constructor(public firstName: string, public lastName: string) {
+
+    }
+    get fullName() {
+        return this.firstName + this.lastName
+    }
+    walk() {
+        console.log(this.fullName, "is walking.....")
+    }
+}
+// Person is inherited by Teacher Class. don't need to call super when don't use constructor
+class Teacher extends Person {
+  ✅  override get fullName() {
+        return "Professor" + super.fullName ✅ // wew can directly call parent class method  by supper keyword. (Remember only method we can call by super)
+    }
+}
+const teacher1=new Teacher("Rasel","Hossain")
+console.log(teacher1.fullName)
+```
+
 ### Declaration File
 
 <img src="./image/declaratio.png">

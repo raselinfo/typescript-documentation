@@ -8,17 +8,20 @@ class Person {
     walk() {
         console.log(this.fullName, "is walking.....")
     }
-}
-// Person is inherited by Student Class
-class Student extends Person {
-    constructor(public studentId: number, firstName: string, lastName: string) {
-        super(firstName, lastName)
-    }
-
-    talking() {
-        console.log(this.fullName, "is talking.......")
+    age(){
+        return 10
     }
 }
+// Person is inherited by Teacher Class
+class Teacher extends Person {
 
-const student1 = new Student(1, "Rasel", "Hossain")
-student1.talking()
+    override get fullName() {
+        return "Professor" + super.fullName
+    }
+
+    get getFirstName() {
+        return super.age()
+    }
+}
+const teacher1 = new Teacher("Rasel", "Hossain")
+console.log(teacher1.getFirstName)
