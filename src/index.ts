@@ -16,3 +16,4 @@ class Account {
 }
 
 const account = new Account(1, "Rasel", 500)
+console.log(account instanceof Account)

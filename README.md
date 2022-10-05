@@ -186,6 +186,19 @@ let phone2 = <HTMLInputElement>document.getElementById("emailInput");
 console.log(phone.value);
 ```
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## OOP IN Typescript
 
 ### Creating a Class
@@ -209,7 +222,36 @@ class Account {
 }
 
 const account = new Account(1, "Rasel", 500)
+console.log(account instanceof Account)
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #### Index Signature Property
 
