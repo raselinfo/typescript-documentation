@@ -367,6 +367,9 @@ const teacher1=new Teacher("Rasel","Hossain")
 console.log(teacher1.fullName)
 ```
 
+### Polymorphism (Many Form)
+
+
 ### Declaration File
 
 <img src="./image/declaratio.png">
