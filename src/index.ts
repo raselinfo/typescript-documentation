@@ -1,27 +1,24 @@
-class Account {
+class Person {
+    constructor(public firstName: string, public lastName: string) {
 
-    constructor(
-        public readonly id: number,
-        public readonly owner: string,
-        private _balance: number) {
-        // Not need to assign variable like "this.id=id"
     }
-    // Getter Setter ✅
-    get balance(): number {
-        return this._balance
+    get fullName() {
+        return this.firstName + this.lastName
     }
-    set balance(value: number) {
-        this._balance = value
+    walk() {
+        console.log(this.fullName, "is walking.....")
+    }
+}
+// Person is inherited by Student Class
+class Student extends Person {
+    constructor(public studentId: number, firstName: string, lastName: string) {
+        super(firstName, lastName)
     }
 
-    public deposit(amount: number) {
-        // this.id=50 is is readonly
-        if (amount <= 0)
-            throw new Error("Invalid amount")
-        this._balance += amount
+    talking() {
+        console.log(this.fullName, "is talking.......")
     }
 }
 
-const account = new Account(1, "Rasel", 500)
-account.balance = 600
-console.log(account.balance)
+const student1 = new Student(1, "Rasel", "Hossain")
+student1.talking()

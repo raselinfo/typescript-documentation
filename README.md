@@ -195,8 +195,10 @@ class Account {
   id: number;
   owner: string;
   balance: number;
+  directVariable: string = "new name"; // ✅ this is react variable assign/initialize without constructor
 
-  constructor(id: number, owner: string, balance: number) {
+  //  Number has default value
+  constructor(id: number, owner: string, /*✅*/ balance: number = 100) {
     this.id = id;
     this.owner = owner;
     this.balance = balance;
@@ -249,7 +251,7 @@ class Account {
   ) {
     // Not need to assign variable like "this.id=id" ✅
   }
-  // Getter Setter 
+  // Getter Setter
   get balance(): number {
     return this._balance;
   }
@@ -259,7 +261,7 @@ class Account {
 }
 ```
 
-#### Index Signature Property
+### Index Signature Property
 
 ```ts
 // const person = {}
@@ -268,7 +270,7 @@ class Account {
 // So that . we cna create an class . and from the class we can create obj
 class SeatPerson {
     // index  signature property
-    [seatPerson: string]: string
+    [seatPerson: string]: string | number | boolean
 }
 
 const seats = new SeatPerson()
@@ -276,8 +278,65 @@ seats.first = "Rasel"
 seats.last = "Hossain"
 seats.age = 50 ❌ // we also use type
 console.log(seats)
+
+
+// -----------------
+interface IndexSignature {
+    [key: string]: string | number | boolean;
+
+}
+
+let obj: IndexSignature = {}
+obj.name = "Rasel"
+obj.class = "10"
+obj.id = 50
+
+console.log(obj)
+
 ```
 
+### Static Member
+
+What static method does in OOP?
+
+```js
+class Ride {
+    private static _activeRide: number = 100
+
+    static get activeRide() {
+        return Ride._activeRide
+    }
+}
+console.log(Ride.activeRide)
+
+```
+### Inheritance
+```js
+class Person {
+    constructor(public firstName: string, public lastName: string) {
+
+    }
+    get fullName() {
+        return this.firstName + this.lastName
+    }
+    walk() {
+        console.log(this.fullName, "is walking.....")
+    }
+}
+// Person is inherited by Student Class ✅	
+class Student extends Person {
+    constructor(public studentId: number, firstName: string, lastName: string) {
+        super(firstName, lastName)
+    }
+
+    talking() {
+        console.log(this.fullName, "is talking.......")
+    }
+}
+
+const student1 = new Student(1, "Rasel", "Hossain")
+student1.talking()
+```
 ### Declaration File
 
 <img src="./image/declaratio.png">
