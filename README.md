@@ -186,6 +186,17 @@ let phone2 = <HTMLInputElement>document.getElementById("emailInput");
 console.log(phone.value);
 ```
 
+## OOP IN Typescript
+
+
+
+
+
+
+
+
+
+
 #### Index Signature Property
 
 ```ts
