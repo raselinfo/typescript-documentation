@@ -1,27 +1,18 @@
-class Person {
-    constructor(public firstName: string, public lastName: string) {
+abstract class Shape {
+    constructor(public color: string) { }
 
+    //    abstract render(): void { console.log("Shape rendering...")}
+    abstract render(): void;
+}
+
+class Circle extends Shape {
+    constructor(public radius: number, color: string) {
+        super(color)
     }
-    get fullName() {
-        return this.firstName + this.lastName
-    }
-    walk() {
-        console.log(this.fullName, "is walking.....")
-    }
-    age(){
-        return 10
+    override render(): void {
+        console.log("Circle is rendering...")
     }
 }
-// Person is inherited by Teacher Class
-class Teacher extends Person {
 
-    override get fullName() {
-        return "Professor" + super.fullName
-    }
-
-    get getFirstName() {
-        return super.age()
-    }
-}
-const teacher1 = new Teacher("Rasel", "Hossain")
-console.log(teacher1.getFirstName)
+const c1=new Circle(10,"red")
+c1.render()

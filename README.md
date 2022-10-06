@@ -219,6 +219,7 @@ console.log(account instanceof Account);
 ### Access modifier (public, private, protected)
 
 All of the property **public** by default
+Protected Member can Inherited bu Private member can't inherited
 
 ```ts
 class Account {
@@ -369,6 +370,61 @@ console.log(teacher1.fullName)
 
 ### Polymorphism (Many Form)
 
+```ts
+class Person {
+  constructor(public firstName: string, public lastName: string) {}
+  get fullName() {
+    return this.firstName + this.lastName;
+  }
+  walk() {
+    console.log(this.fullName, "is walking.....");
+  }
+}
+// Person is inherited by Teacher Class
+class Teacher extends Person {
+  override get fullName() {
+    return "Professor" + super.fullName;
+  }
+}
+// Person is inherited by Student Class
+class Student extends Person {
+  // override get fullName(): string {
+  //     return super.fullName
+  // }
+}
+iteratePeople([
+  new Teacher("Rasel", "Hossain"),
+  new Student("Rabina", "Akther"),
+]);
+
+function iteratePeople(people: Person[]) {
+  for (let person of people) //✅ here Person class behave many form
+    console.log(person.fullName);
+}
+```
+
+### Abstraction
+
+```ts
+abstract class Shape { ✅
+  constructor(public color: string) {}
+
+  //    abstract render(): void { console.log("Shape rendering...")}
+  abstract render(): void;✅
+}
+
+class Circle extends Shape {
+  constructor(public radius: number, color: string) {
+    super(color);
+  }
+  override render(): void {
+    console.log("Circle is rendering...");
+  }
+}
+
+const c1 = new Circle(10, "red");
+c1.render();
+```
 
 ### Declaration File
 
