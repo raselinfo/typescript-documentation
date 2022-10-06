@@ -443,13 +443,37 @@ Classes does not support multiple inheritance. Interface supports multiple inher
 
 ```ts
 interface ICalender {
-  firstName: string;
-  lastName: string;
-  // fullName: () => void;
-  fullName(): void;
+    firstName: string;
+    lastName: string;
+    // fullName: () => void;
+    fullName(): void;
+}
+
+interface IMobileCalender extends ICalender {
+    sync(): void;
 }
 ```
+**Implement Interface with a class**
+```ts
+interface ICalender {
+    firstName: string;
+    lastName: string;
+    // fullName: () => void;
+    fullName(): void;
+}
 
+class Rasel implements ICalender {
+    firstName: string;
+    lastName: string;
+    fullName(): void {
+        throw new Error("Method not implemented.");
+    }
+    constructor(firstName: string, lastName: string) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+}
+```
 ### Declaration File
 
 <img src="./image/declaratio.png">
