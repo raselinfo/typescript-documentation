@@ -5,14 +5,12 @@ abstract class Shape {
     abstract render(): void;
 }
 
-class Circle extends Shape {
+abstract class Circle extends Shape {
     constructor(public radius: number, color: string) {
         super(color)
     }
-    override render(): void {
-        console.log("Circle is rendering...")
-    }
+    
 }
 
 const c1=new Circle(10,"red")
-c1.render()
+// c1.render()

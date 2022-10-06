@@ -405,6 +405,8 @@ function iteratePeople(people: Person[]) {
 
 ### Abstraction
 
+Abstract property only accessible from abstract class. but if you want inherit abstract member inside not-abstract class use member override
+
 ```ts
 abstract class Shape { ✅
   constructor(public color: string) {}
