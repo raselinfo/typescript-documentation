@@ -405,7 +405,7 @@ function iteratePeople(people: Person[]) {
 
 ### Abstraction
 
-Abstract property only accessible from abstract class. but if you want inherit abstract member inside not-abstract class use member override
+Abstract property only accessible from abstract class. but if you want inherit abstract member inside not-abstract class use member override. we can not create an instance of abstract class.
 
 ```ts
 abstract class Shape { ✅
@@ -427,6 +427,17 @@ class Circle extends Shape {
 const c1 = new Circle(10, "red");
 c1.render();
 ```
+
+### Interface
+
+**What is the different between Interface vs Class**
+The basic difference is that a class has both a definition and an implementation whereas an interface only has a definition. Interfaces are actually implemented via a class. (Due to this an interface supports the concept of multiple inheritances.)
+
+Classes are the fundamental entities used to create reusable components. It is a group of objects which have common properties. It can contain properties like fields, methods, constructors, etc. An Interface defines a structure which acts as a contract in our application.
+
+A class is a blueprint from which we can create objects that share the same configuration - properties and methods. An interface is a group of related properties and methods that describe an object, but neither provides implementation nor initialisation for them.
+
+Classes does not support multiple inheritance. Interface supports multiple inheritance.
 
 ### Declaration File
 
