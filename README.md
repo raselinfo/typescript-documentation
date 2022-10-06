@@ -441,6 +441,15 @@ Classes does not support multiple inheritance. Interface supports multiple inher
 
 <a href="https://www.javatpoint.com/typescript-class-vs-interface#:~:text=Classes%20are%20the%20fundamental%20entities%20used%20to%20create%20reusable%20components,a%20contract%20in%20our%20application."> Show details </a>
 
+```ts
+interface ICalender {
+  firstName: string;
+  lastName: string;
+  // fullName: () => void;
+  fullName(): void;
+}
+```
+
 ### Declaration File
 
 <img src="./image/declaratio.png">
