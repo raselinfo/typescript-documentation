@@ -562,10 +562,12 @@ Utils.createArray("Rasel");
 
 ### Install dependency
 
-> yarn add -D typescript ts-node nodemon
-> tsc --init
-> yarn add express cors
-> yarn add -D @types/express @types/cors
+```js
+yarn add -D typescript ts-node nodemon
+tsc --init
+yarn add express cors
+yarn add -D @types/express @types/cors
+```
 
 ### Nodemon config file
 
