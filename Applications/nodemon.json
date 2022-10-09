@@ -1,5 +1,5 @@
 {
-  "ignore": ["*.test.js", "node_modules/", "dist/"],
+  "ignore": ["*.test.js", "node_modules/", "dist/"], 
   "watch": ["src/*"],
   "ext": "js,json,ts"
 }

@@ -443,38 +443,41 @@ Classes does not support multiple inheritance. Interface supports multiple inher
 
 ```ts
 interface ICalender {
-    firstName: string;
-    lastName: string;
-    // fullName: () => void;
-    fullName(): void;
+  firstName: string;
+  lastName: string;
+  // fullName: () => void;
+  fullName(): void;
 }
 
 interface IMobileCalender extends ICalender {
-    sync(): void;
+  sync(): void;
 }
 ```
+
 **Implement Interface with a class**
 The TypeScript implements keyword is used to implement an interface within a class.
+
 ```ts
 interface ICalender {
-    firstName: string;
-    lastName: string;
-    // fullName: () => void;
-    fullName(): void;
+  firstName: string;
+  lastName: string;
+  // fullName: () => void;
+  fullName(): void;
 }
 
 class Rasel implements ICalender {
-    firstName: string;
-    lastName: string;
-    fullName(): void {
-        throw new Error("Method not implemented.");
-    }
-    constructor(firstName: string, lastName: string) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
+  firstName: string;
+  lastName: string;
+  fullName(): void {
+    throw new Error("Method not implemented.");
+  }
+  constructor(firstName: string, lastName: string) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
 }
 ```
+
 ### Declaration File
 
 <img src="./image/declaratio.png">
@@ -556,7 +559,22 @@ Utils.createArray("Rasel");
 <a hrf="https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/function_components"><b>React Typescript Cheat sheet 😎</b></a>
 
 ## Node Typescript
+
+### Install dependency
+
 ```bash
 yarn add -D typescript ts-node nodemon
 tsc --init
+```
+
+### Nodemon config file
+
+_nodemon.json_
+
+```json
+{
+  "ignore": ["*.test.js", ".git", "node_modules/", "dist/"],
+  "watch": ["src/*"],
+  "ext": "js,json,ts"
+}
 ```
