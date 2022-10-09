@@ -1,19 +1,13 @@
 "use strict";
-class Ride {
-    start() {
-        Ride._activeRide++;
+class Account {
+    constructor() {
+        this._balance = 100;
+        this.name = "Rasel";
     }
-    stop() {
-        Ride._activeRide--;
-    }
-    static get activeRide() {
-        return Ride._activeRide;
+    get balance() {
+        return this._balance;
     }
 }
-Ride._activeRide = 10;
-const ride1 = new Ride();
-const ride2 = new Ride();
-ride1.start();
-ride1.start();
-console.log(Ride.activeRide);
+const ac1 = new Account();
+console.log(ac1);
 //# sourceMappingURL=index.js.map

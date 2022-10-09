@@ -454,6 +454,7 @@ interface IMobileCalender extends ICalender {
 }
 ```
 **Implement Interface with a class**
+The TypeScript implements keyword is used to implement an interface within a class.
 ```ts
 interface ICalender {
     firstName: string;
@@ -553,3 +554,9 @@ Utils.createArray("Rasel");
 ## Rect Typescript
 
 <a hrf="https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/function_components"><b>React Typescript Cheat sheet 😎</b></a>
+
+## Node Typescript
+```bash
+yarn add -D typescript ts-node nodemon
+tsc --init
+```
